@@ -9,13 +9,13 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-# RootModule = ''
+RootModule = 'KMaks.Prompt'
 
 # Version number of this module.
 ModuleVersion = '1.0.0'
 
 # Supported PSEditions
-# CompatiblePSEditions = @()
+CompatiblePSEditions = @('Core')
 
 # ID used to uniquely identify this module
 GUID = '0b582227-ce4e-4d9c-ad5d-37d8be14a93f'
@@ -51,15 +51,13 @@ Copyright = '(c) Krystian Maksymowicz. All rights reserved.'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(
-    'Public\prompt.ps1'
-)
+RequiredModules = @()
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
 
 # Script files (.ps1) that are run in the caller's environment prior to importing this module.
-# ScriptsToProcess = @()
+ScriptsToProcess = @()
 
 # Type files (.ps1xml) to be loaded when importing this module
 # TypesToProcess = @()
@@ -92,7 +90,7 @@ AliasesToExport = @()
 
 # List of all files packaged with this module
 FileList = @(
-    'Public\prompt.ps1'
+    'KMaks.Prompt.psm1'
     'KMaks.Prompt.psd1'
 )
 

@@ -34,6 +34,7 @@ function prompt {
     $Prompt     = "{0}{1}" -f $PSReadLineOption.TypeColor,
                                 [string]$PSReadLineOption.PromptText
 
+    <#
     $GitStatus = {
         try {
             $Branch = git rev-parse --abbrev-ref HEAD
@@ -61,6 +62,7 @@ function prompt {
             }
         } catch {}
     }.Invoke()
+    #>
 
     try {
         $PoshGitStatus = Get-GitStatus

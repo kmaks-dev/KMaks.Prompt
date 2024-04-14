@@ -30,10 +30,10 @@ CompanyName = ''
 Copyright = '(c) Krystian Maksymowicz. All rights reserved.'
 
 # Description of the functionality provided by this module
-# Description = ''
+Description = 'Custom lightweight powershell prompt not any requiring custom fonts.'
 
 # Minimum version of the PowerShell engine required by this module
-# PowerShellVersion = ''
+PowerShellVersion = '7.0'
 
 # Name of the PowerShell host required by this module
 # PowerShellHostName = ''

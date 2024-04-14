@@ -5,6 +5,7 @@ on:
     inputs:
       modulePath:
         description: "Provide the module path that includes .psd1"
+        default: .\
         required: true
       NuGetApiKey:
         description: "Provide NuGetApiKey for your profile in PSGallery."

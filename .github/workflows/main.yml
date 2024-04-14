@@ -1,3 +1,5 @@
+name: Publish to PSGallery
+
 on:
   workflow_dispatch:
     inputs:

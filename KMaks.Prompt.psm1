@@ -34,47 +34,7 @@ function prompt {
     $Prompt     = "{0}{1}" -f $PSReadLineOption.TypeColor,
                                 [string]$PSReadLineOption.PromptText
 
-    <#
-    $GitStatus = {
-        try {
-            $Branch = git rev-parse --abbrev-ref HEAD
-            if ($?) {
-                $Status = (
-                    git status --porcelain |
-                    ConvertFrom-StringData -Delimiter " " |
-                    Group-Object {$_.Keys} -NoElement |
-                    ForEach-Object -Process { "{0}{1}" -f $_.Name[0], $_.Count }
-                ) -join " "
-
-                if ($Branch -eq "HEAD") {
-                    # we're probably in detached HEAD state, so print the SHA
-                    $Git = "{0}" -f (git rev-parse --short HEAD)
-                }
-                else {
-                    # we're on an actual branch, so print it
-                    $Git = "{0}" -f $Branch
-                }
-
-                if ($Status) {
-                    $Git = "{0} {1}{2}" -f $Git, $PSReadLineOption.ListPredictionColor, $Status
-                }
-                "{0}({1}{0})`n" -f $PSReadLineOption.MemberColor, $Git
-            }
-        } catch {}
-    }.Invoke()
-    #>
-
-    try {
-        $PoshGitStatus = Get-GitStatus
-        if ($PoshGitStatus) {
-            $PoshGit = Write-GitStatus -Status $PoshGitStatus
-            $PoshGit += "`n"
-        }
-    }
-    catch {}
-
     "`r" +
     "${Timestamp} ${Path}`n" +
-    "${PoshGit}" +
     "${PSVersion}${Prompt}"
 }
